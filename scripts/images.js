@@ -20,7 +20,7 @@ function draw_all_art(db,first,last){
 
 function add_art(item){
     // Add a single piece of art to the main body
-    $('.col').append(`<img id=${item.id} class="px-4 py-4 img-fluid" src="images/${item.file_name}">`);
+    $('.col').append(`<img id="${item.id}" class="px-4 py-4 img-fluid" src="images/${item.file_name}">`);
     $(`#${item.id}`).on('click',(e)=> {
         var id = this.event.target.id
         show_single_art(id)
