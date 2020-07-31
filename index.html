@@ -27,10 +27,12 @@
         <div class="pagination"></div>
         </div>
     </div>
-
-
     <script src="scripts/db.js"></script>
-
+    <script src="scripts/db_manager.js"></script>
+    <script>
+        var database = new Database(db);
+        console.log(database.get_by_artist('t2_wmupz'));
+    </script>
 </body>
 
 </html>

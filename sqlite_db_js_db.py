@@ -57,9 +57,16 @@ s = loadSession()
 
 files = list_files('images')
 # get only the database records that we have files for
-file_details = s.query(Art).filter(Art.file_name.in_(files)).all()
+art_details = s.query(Art).filter(Art.file_name.in_(files)).all()
+artist_ids_from_art = [a.Artist for a in art_details]
+artist_details = s.query(Artist).filter(Artist.id.in_(artist_ids_from_art))
 
-ds = [f.as_dict() for f in file_details]
+
+
+ds = [f.as_dict() for f in art_details]
+for d in ds:
+    d['Artist_name']=artist_details.filter(Artist.id==(d['Artist'])).first().name
+
 
 tmp_dict = {}
 for d in ds:
@@ -75,4 +82,4 @@ with open('scripts/db.js','w') as f:
     f.write(db)
 
 
-print(file_details)
+print(art_details)
