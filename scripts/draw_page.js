@@ -6,7 +6,7 @@ function draw_all_art(db,first,last){
 }
 function render_art_list(art){
     // Renders an piece of art in a list with link to the detailed view
-    $('.col').append(`<a href=art.html?art_id=${art.id}><img id="${art.id}" class="mx-1 my-1 px-3 py-3 img-thumbnail" width="400" height="400" src="images/${art.file_name}" /></a>`);
+    $('.col').append(`<a href=art.html?art_id=${art.id}><img id="${art.id}" class="mx-1 my-1 px-3 py-3 img-thumbnail art-thumbnail" width="400" height="400" src="images/${art.file_name}" /></a>`);
   
 }
 

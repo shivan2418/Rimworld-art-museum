@@ -5,7 +5,18 @@ body.main{
     background-repeat: no-repeat;
 }
 
-ul {
+.art-thumbnail{
+    transition: 1.5s;
+}
+
+.art-thumbnail:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);     
+
+}
+
+.art_details ul {
     padding-left:0px;
 }
 
