@@ -20,6 +20,17 @@ class Database{
         return result
     }
 
-    
+    get_all_artists(by='id'){
+
+        let unique;
+        if (by==='id'){
+            unique = [...new Set(this.all().map(item => item.Artist))]; // [ 'A', 'B']
+        }else{
+            unique = [...new Set(this.all().map(item => item.Artist_name))]; // [ 'A', 'B']
+        }
+
+        return unique;
+
+    }
 }
 
