@@ -1,3 +1,13 @@
+.art_title{
+    font-size: 20pt;
+    
+}
+.art_image{
+    max-width: 75%;
+    max-height: fit-content;
+}
+
+
 .pagination {
     margin: 40px 0 0 0;
     text-align: center;
@@ -11,6 +21,7 @@
     border: 1px solid #eaeaea;
     border-radius: 5px;
     padding: 3px 8px;
+
     text-decoration: none;
     color: #4ba6c3;
 }

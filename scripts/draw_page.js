@@ -1,40 +1,21 @@
-
-//load images
-new FileReader()
-
-async function load_json(){
-    return fetch('./poor_mans_db.json')
-        .then(res => res.json())
-}
-
-load_json()
-    .then(res => {
-        db = res;
-        draw_all_art(res,0,25);
-        pagination()
-    });
-
 function draw_all_art(db,first,last){
     let sliced_db = db.slice(first,last);
     sliced_db.forEach(item => {
-        add_art(item)
+        render_art_list(item)
     });
 }
-
-function add_art(item){
-    // Add a single piece of art to the main body
-    $('.col').append(`<img id="${item.id}" class="px-4 py-4 img-fluid" src="images/${item.file_name}" />`);
-    $(`#${item.id}`).on('click',(e)=> {
-        var id = this.event.target.id
-        show_single_art(id)
-    });
-
+function render_art_list(art){
+    // Renders an piece of art in a list with link to the detailed view
+    $('.col').append(`<a href=art.html?art_id=${art.id}><img id="${art.id}" class="px-4 py-4 img-thumbnail" width="400" height="400" src="images/${art.file_name}" /></a>`);
+  
 }
 
-function show_single_art(item){
-    // Empty the whole canvas
-    $('.col').empty();
-    add_art(item);
+function render_art_detailed(art){
+    // Renders a piece of art for the detail view
+    $('.art_title').first().html(art.title);
+    $('.art_image').first().attr('src',`images/${art.file_name}`)
+    $('.art_details').first().html(`<a href=http://reddit.com/user/${art.Artist_name}>${art.Artist_name}</a>`)
+
 }
 
 function pagination() {

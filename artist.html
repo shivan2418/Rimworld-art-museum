@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>$('head').load('head.html')</script>
+    </head>
+<body>
+
+    <div class="container-fluid">
+      <div class="row" id='artist_name'>
+      </div>
+        <div class="row">
+            <div class="col">
+
+            </div>
+
+
+        </div>
+    </div>
+    
+
+  
+    <script src="scripts/db.js"></script>
+    <script src="scripts/db_manager.js"></script>
+    <script src='scripts/draw_page.js'></script>
+    <script>
+      var database = new Database(db);
+      var params = new URLSearchParams(window.location.search);
+      var artist_id = params.get('artist_id');
+
+      let arts = database.get_by_artist(artist_id);
+
+      $('#artist_name').html(arts[0].Artist_name)
+
+      arts.forEach(art => {
+        render_art_list(art);
+      })
+    </script>
+</body>
+
+</html>
