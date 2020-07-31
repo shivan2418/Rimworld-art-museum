@@ -1,5 +1,5 @@
 <html>
-    <head>
+ <head>
         <!-- jQuery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- Bootstrap-->
@@ -11,25 +11,20 @@
         </title>
     </head>
 
+
 <body>
+<script>
+
+    var url = new URL(window.location.href);
+    var params = new URLSearchParams(url.search);
+
+    console.log(params);
 
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-
-            </div>
 
 
-        </div>
 
-        <div class="row">
-        <div class="pagination"></div>
-        </div>
-    </div>
-
-
-    <script src="scripts/db.js"></script>
+</script>
 
 </body>
 

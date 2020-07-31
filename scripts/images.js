@@ -1,4 +1,7 @@
+
 //load images
+new FileReader()
+
 async function load_json(){
     return fetch('./poor_mans_db.json')
         .then(res => res.json())

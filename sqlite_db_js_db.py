@@ -8,7 +8,7 @@ from sqlalchemy import create_engine
 from sqlalchemy_utils.functions import database_exists
 
 from elutils.osio import list_files
-from elutils.osio import write_json
+from elutils.osio import write_json,read_json
 
 DATABASE_PATH = 'rimworld.sqlite3'
 
@@ -56,13 +56,23 @@ class Post(Base):
 s = loadSession()
 
 files = list_files('images')
-
-
-
+# get only the database records that we have files for
 file_details = s.query(Art).filter(Art.file_name.in_(files)).all()
 
 ds = [f.as_dict() for f in file_details]
 
-write_json(ds, 'poor_mans_db.json')
+tmp_dict = {}
+for d in ds:
+    tmp_dict[d['id']]=d
+
+db = str(tmp_dict)
+db=db.replace('False','false')
+db=db.replace('True','true')
+db=db.replace('None','null')
+
+db = ''.join(  ('var db = ',db,';')   )
+with open('scripts/db.js','w') as f:
+    f.write(db)
+
 
 print(file_details)

@@ -1,4 +1,4 @@
-[
+var db = [
   {
     "id": "t3_g6aygc",
     "created_at": "2020-04-22 18:31:30",
@@ -692,4 +692,4 @@
     "type": null,
     "Artist": "t2_owa4d"
   }
-]
+];
