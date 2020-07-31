@@ -4,7 +4,7 @@
         <script>$('head').load('head.html')</script>
         <title>Rimworld Museum</title>
     </head>
-<body>
+<body class='main'>
 
     <div class="container-fluid">
         <div class="row">
@@ -25,7 +25,7 @@
         let artists = database.get_all_artists(returnval='both');
         artists.forEach(artist =>{
             
-            $('.col').append(`<a href="artist.html?artist_id=${artist[0]}">${artist[1]}</a><br>`);
+            $('.col').append(`<a href="artist.html?artist_id=${artist[0]}">${artist[1]} (${database.get_by_artist(artist[0]).length})</a><br>`);
         })
 
         

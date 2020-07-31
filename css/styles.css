@@ -1,3 +1,20 @@
+body.main{
+    background-image: url('background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+ul {
+    padding-left:0px;
+}
+
+ul li { display: inline;}
+
+p a{
+    color:#6c757d!important
+}
+
 .art_title{
     font-size: 20pt;
     
@@ -7,6 +24,9 @@
     max-height: fit-content;
 }
 
+.art_detail_view{
+    background-color:white
+}
 
 .pagination {
     margin: 40px 0 0 0;

@@ -6,7 +6,7 @@ function draw_all_art(db,first,last){
 }
 function render_art_list(art){
     // Renders an piece of art in a list with link to the detailed view
-    $('.col').append(`<a href=art.html?art_id=${art.id}><img id="${art.id}" class="px-4 py-4 img-thumbnail" width="400" height="400" src="images/${art.file_name}" /></a>`);
+    $('.col').append(`<a href=art.html?art_id=${art.id}><img id="${art.id}" class="mx-1 my-1 px-3 py-3 img-thumbnail" width="400" height="400" src="images/${art.file_name}" /></a>`);
   
 }
 
@@ -14,7 +14,18 @@ function render_art_detailed(art){
     // Renders a piece of art for the detail view
     $('.art_title').first().html(art.title);
     $('.art_image').first().attr('src',`images/${art.file_name}`)
-    $('.art_details').first().html(`<a href=http://reddit.com/user/${art.Artist_name}>${art.Artist_name}</a>`)
+    $('.art_details').first().html(`
+    <ul>
+        <li class=mr-2>
+            <a href=http://reddit.com/user/${art.Artist_name}>${art.Artist_name}</a>  
+        </li>
+        <li class=mr-2>
+            <a href=http://reddit.com${art.permalink}>Original Post (${art.upvotes} upvotes)</a>
+        </li>
+        <li class=mr-2>
+            <a href=artist.html?artist_id=${art.Artist}>All by ${art.Artist_name}</a>
+        </li>
+    </ul>`)
 
 }
 
