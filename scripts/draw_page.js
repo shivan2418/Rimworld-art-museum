@@ -15,7 +15,7 @@ function render_art_detailed(art){
     $('.art_title').first().html(art.title);
     $('.art_image').first().attr('src',`images/${art.file_name}`)
     $('.art_details').first().html(`
-    <ul>
+    <ul class="text-muted">
         <li class=mr-2>
             <a href=http://reddit.com/user/${art.Artist_name}>${art.Artist_name}</a>  
         </li>
@@ -26,7 +26,6 @@ function render_art_detailed(art){
             <a href=artist.html?artist_id=${art.Artist}>All by ${art.Artist_name}</a>
         </li>
     </ul>`)
-
 }
 
 function pagination(current_page) {

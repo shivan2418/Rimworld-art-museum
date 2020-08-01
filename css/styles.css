@@ -9,18 +9,22 @@ body.main{
 }
 
 .navigation_links a{
-    color: #6c757d!important;
+    color: #d0d7dd!important;
+}
 
+div.navigation_links{
+    background-color: rgb(94, 82, 82,0.3);
 
+}
+
+div.navigation_links a{
+    opacity: 1;
 }
 
 .art-thumbnail{
     transition: 1.5s;
 }
 
-.artist_name{
-
-}
 .page_button{
     background-color: #6a502b;
     color: #baaa99;
@@ -39,10 +43,14 @@ body.main{
     padding-left:0px;
 }
 
+ul li a{
+    color:rgb(53, 49, 49)
+}
+
 ul li { display: inline;}
 
-p a{
-    color:#6c757d!important
+div.navigation_links p a{
+
 }
 
 .art_title{

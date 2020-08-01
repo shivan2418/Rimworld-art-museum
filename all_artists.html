@@ -16,8 +16,10 @@
             }
             </style>
 
-            <div class="col navigation_links">
+            <div class="col col-3">
+                  <div class="navigation_links pl-2 py-2 my-4 ml-4">
 
+                  </div>
             </div>
 
         </div>
@@ -33,7 +35,7 @@
         let artists = database.get_all_artists(returnval='both');
         artists.forEach(artist =>{
             
-            $('.col').append(`<a href="artist.html?artist_id=${artist[0]}">${artist[1]} (${database.get_by_artist(artist[0]).length})</a><br>`);
+            $('div.navigation_links').append(`<p><a  class="ml-1 my-1"  href="artist.html?artist_id=${artist[0]}">${artist[1]} (${database.get_by_artist(artist[0]).length})</a></p>`);
         })
 
         

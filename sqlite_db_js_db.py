@@ -62,7 +62,6 @@ artist_ids_from_art = [a.Artist for a in art_details]
 artist_details = s.query(Artist).filter(Artist.id.in_(artist_ids_from_art))
 
 
-
 ds = [f.as_dict() for f in art_details]
 for d in ds:
     d['Artist_name']=artist_details.filter(Artist.id==(d['Artist'])).first().name
