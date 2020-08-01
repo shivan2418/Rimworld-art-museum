@@ -3,9 +3,15 @@ class Database{
         this.db = db;
     }
 
+
+
     all(){
         // Returns all items in the DB as an array
         return Object.values(this.db)
+    }
+
+    get_range(a,b){
+        return this.all().slice(a,b);
     }
 
     get(id){
@@ -15,6 +21,10 @@ class Database{
         }catch{
             return null;
         }
+    }
+
+    get_size(){
+        return Object.keys(this.db).length
     }
 
     get_by_artist(artist_id){

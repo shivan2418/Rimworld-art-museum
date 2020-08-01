@@ -2,13 +2,32 @@
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>$('head').load('head.html')</script>
-        <title>Rimworld Museum</title>
+        <title>RimWorld Museum</title>
     </head>
 <body class='main'>
 
     <div class="container-fluid">
         <div class="row">
             <div class="col">
+                <style>
+                    @font-face {font-family: RimWorldFont; src: url('css/RimWordFont.ttf');}
+                    a {
+                        font-family: RimWorldFont;
+                    }
+                </style>
+                <div class='px-2 py-2'>
+                    <h3>
+                    <p>
+                        <a href='all_artists.html'>Browse by artist</a>
+                    </p>
+                    <p>
+                        <a href='all_art.html?page=1'>Browse all art</a>
+                    </p>
+                    <p>
+                        <a id='random' href=#>Random</a>
+                    </p>
+                </h3>
+                </div>
 
             </div>
 
@@ -17,20 +36,12 @@
     </div>
     
 
-      <script src="scripts/db.js"></script>
-      <script src="scripts/db_manager.js"></script>
-      <script>
-        var database = new Database(db);    
+<script>
+    $('#random').on('click'){
 
-        let artists = database.get_all_artists(returnval='both');
-        artists.forEach(artist =>{
-            
-            $('.col').append(`<a href="artist.html?artist_id=${artist[0]}">${artist[1]} (${database.get_by_artist(artist[0]).length})</a><br>`);
-        })
+    }
 
-        
-
-    </script>
+</script>
 
 </body>
 

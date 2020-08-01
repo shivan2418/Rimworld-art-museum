@@ -16,6 +16,10 @@
 
 
         </div>
+
+        <div class='row pagination justify-content-center'>
+
+        </div>
     </div>
     
 
@@ -24,17 +28,24 @@
     <script src="scripts/db_manager.js"></script>
     <script src='scripts/draw_page.js'></script>
     <script>
-      var database = new Database(db);
+
       var params = new URLSearchParams(window.location.search);
-      var artist_id = params.get('artist_id');
+      var page = parseInt(params.get('page'));
+      page = page*10 - 10
+      if (isNaN(page)){
+        page=0
+      }
 
-      let arts = database.get_by_artist(artist_id);
+      let database = new Database(db);
 
-      $('#artist_name').html(arts[0].Artist_name)
+
+      let arts = database.get_range(page,page+10);
 
       arts.forEach(art => {
         render_art_list(art);
-      })
+      });
+
+      pagination();
     </script>
 </body>
 

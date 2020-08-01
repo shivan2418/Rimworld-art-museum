@@ -1,3 +1,6 @@
+@font-face { font-family: RimWorldFont; src: url('RimWordFont.ttf'); } 
+
+
 body.main{
     background-image: url('background.jpg');
     background-position: center;
@@ -5,8 +8,24 @@ body.main{
     background-repeat: no-repeat;
 }
 
+.navigation_links a{
+    color: #6c757d!important;
+
+
+}
+
 .art-thumbnail{
     transition: 1.5s;
+}
+
+.artist_name{
+
+}
+.page_button{
+    background-color: #6a502b;
+    color: #baaa99;
+    border-style:inset;
+    border:75em solid;
 }
 
 .art-thumbnail:hover{

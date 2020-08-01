@@ -6,7 +6,7 @@ function draw_all_art(db,first,last){
 }
 function render_art_list(art){
     // Renders an piece of art in a list with link to the detailed view
-    $('.col').append(`<a href=art.html?art_id=${art.id}><img id="${art.id}" class="mx-1 my-1 px-3 py-3 img-thumbnail art-thumbnail" width="400" height="400" src="images/${art.file_name}" /></a>`);
+    $('.col.art').append(`<a href=art.html?art_id=${art.id}><img id="${art.id}" class="mx-1 my-1 px-3 py-3 img-thumbnail art-thumbnail" width="400" height="400" src="images/${art.file_name}" /></a>`);
   
 }
 
@@ -29,21 +29,17 @@ function render_art_detailed(art){
 
 }
 
-function pagination() {
+function pagination(current_page) {
     // calculate how many nav buttons are needed, use the rounded up number.
-    const num_navbuttons = Math.ceil(db.length / 10);
-
+    const num_navbuttons = Math.ceil(database.get_size() / 10);
+        let page = 1;
     //  iteate and create buttons as needed.
     for (let i = 0; i < num_navbuttons; i++) {
 
-        let pagebox = $('.pagination').append(`<button class="btn btn-primary">${i+1}</button>`);
 
-        // Add event listener to the button as we create it.
-        pagebox.on('click', function(event) {
-            // when this button is clicked call the display page with the number written on this button as the argument to the function.
-            let page = event.target.textContent;
-            let list = db
-            showPage(list, page);
-        });
+        $('.pagination').first().append(`<a href=all_art.html?page=${page} class="btn page_button my-2 mx-1 border">${i+1}</a>`);
+        page +=1;
+
     }
+
 }

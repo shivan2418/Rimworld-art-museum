@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>$('head').load('head.html')</script>
+        <title>RimWorld Museum</title>
+    </head>
+<body class='main'>
+
+    <div class="container-fluid">
+        <div class="row">
+
+          <style>
+            @font-face {font-family: RimWorldFont; src: url('css/RimWordFont.ttf');}
+            .col {
+                font-family: RimWorldFont;
+            }
+            </style>
+
+            <div class="col navigation_links">
+
+            </div>
+
+        </div>
+
+    </div>
+    
+
+      <script src="scripts/db.js"></script>
+      <script src="scripts/db_manager.js"></script>
+      <script>
+        var database = new Database(db);    
+
+        let artists = database.get_all_artists(returnval='both');
+        artists.forEach(artist =>{
+            
+            $('.col').append(`<a href="artist.html?artist_id=${artist[0]}">${artist[1]} (${database.get_by_artist(artist[0]).length})</a><br>`);
+        })
+
+        
+
+    </script>
+
+</body>
+
+</html>
