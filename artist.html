@@ -21,9 +21,9 @@
     
           <div class='col-1'>
             <h3>
-                <div class='navigation_links  pl-2 py-2 my-4 ml-4'>
+                <div class='navigation_links pt-2 pl-2'>
             <p>
-                <a href='/'>Home</a>
+                <a href='/index.html'>Home</a>
             </p>
            
             </div>
@@ -50,8 +50,6 @@
       var artist_id = params.get('artist_id');
 
       let arts = database.get_by_artist(artist_id);
-
-      $('#artist_name').html(arts[0].Artist_name)
 
       arts.forEach(art => {
         render_art_list(art);
