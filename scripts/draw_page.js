@@ -23,7 +23,7 @@ function render_art_detailed(art){
             <a href=http://reddit.com${art.permalink}>Original Post (${art.upvotes} upvotes)</a>
         </li>
         <li class=mr-2>
-            <a href=artist.html?artist_id=${art.Artist}>All by ${art.Artist_name}</a>
+            <a href=artist.html?artist_id=${art.Artist}>All by ${art.Artist_name} (${database.get_by_artist(art.Artist).length})</a>
         </li>
     </ul>`)
 }
