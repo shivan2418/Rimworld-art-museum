@@ -72,6 +72,12 @@ div.navigation_links p a {
 
 }
 
+.text{
+    color: #d0d7dd;
+    background-color:rgb(94, 82, 82, 0.7);
+    padding: 20;
+}
+
 .art_detail_view {
     background-color: white;
     height: 100%;
