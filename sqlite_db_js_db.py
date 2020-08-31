@@ -81,4 +81,4 @@ with open('scripts/db.js','w') as f:
     f.write(db)
 
 
-print(art_details)
+print('DONE')
