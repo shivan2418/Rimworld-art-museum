@@ -1,74 +1,97 @@
-@font-face { font-family: RimWorldFont; src: url('RimWordFont.ttf'); } 
+@font-face {
+    font-family: RimWorldFont;
+    src: url('RimWordFont.ttf');
+}
 
 
-body.main{
+body.main {
     background-image: url('background.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.navigation_links a{
-    color: #d0d7dd!important;
+.navigation_links a {
+    color: #d0d7dd !important;
 }
 
-div.navigation_links{
-    background-color: rgb(94, 82, 82,0.3);
-
+div.navigation_links {
+    background-color: rgb(94, 82, 82, 0.3);
 }
 
-div.navigation_links a{
+div.navigation_links a {
     opacity: 1;
 }
 
-.art-thumbnail{
+.art-thumbnail {
     transition: 1.5s;
 }
 
-.page_button{
+.page_button {
     background-color: #6a502b;
     color: #baaa99;
-    border-style:inset;
-    border:75em solid;
+    border-style: inset;
+    border: 75em solid;
 }
 
-.art-thumbnail:hover{
+.art-thumbnail:hover {
     -ms-transform: scale(1.1); /* IE 9 */
     -webkit-transform: scale(1.1); /* Safari 3-8 */
-    transform: scale(1.1);     
+    transform: scale(1.1);
 
 }
 
-.art_details ul {
-    padding-left:0px;
+
+ul li a {
+    color: rgb(53, 49, 49)
 }
 
-ul li a{
-    color:rgb(53, 49, 49)
+ul li {
+    display: inline;
 }
 
-ul li { display: inline;}
-
-div.navigation_links p a{
+div.navigation_links p a {
 
 }
 
-.art_title{
+.art_title {
     font-size: 20pt;
-    
-}
-.art_image{
-    max-width: 100%;
-    max-height: fit-content;
+    text-align:center;
+    color: #d0d7dd;
+    margin-top: 10px;
 }
 
-.art_detail_view{
-    background-color:white
+.art_details{
+    text-align: center;
+    margin-top: 5px;
+    color: #d0d7dd
+}
+
+.art_detail li a{
+    color: #d0d7dd
+
+}
+
+.art_detail_view {
+    background-color: white;
+    height: 100%;
+    display: grid;
+}
+
+.imgbox {
+    display: grid;
+}
+.center-fit {
+    max-width: 100%;
+    max-height: 100vh;
+    margin: auto;
 }
 
 .pagination {
     margin: 40px 0 0 0;
     text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .pagination li {

@@ -9,25 +9,14 @@
 
 
 <body class='main'>
+    <div>
+        <p class="art_title "></p>
+        <div class="imgbox">
+            <img class="center-fit art_image" src=''>
+        </div>
+        <p class="art_details">Artist Artist profile link</p>
+    </div>
 
-    <div class="container-fluid py-2 my-5">
-          <div class="row justify-content-center">
-              <div class="col-11 border rounded art_detail_view">
-                <p class="art_title my-1"></p>
-                    <img class="art_image" class='img-fluid' src=''>
-                    <p class="art_details my-1">Artist Artist profile link</p>
-                
-
-
-              </div>
-  
-          </div>
-  
-      </div>
-      
-
-
- 
       <script src="scripts/db.js"></script>
       <script src="scripts/db_manager.js"></script>
       <script src='scripts/draw_page.js'></script>
@@ -36,9 +25,7 @@
         var params = new URLSearchParams(window.location.search);
         var art_id = params.get('art_id');
         var art = database.get(art_id);
-
         render_art_detailed(art)
-
     </script>
 
 </body>
